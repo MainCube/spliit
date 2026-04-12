@@ -11,11 +11,14 @@ import { nanoid } from 'nanoid'
 export function randomId() {
   return nanoid()
 }
+export function randomIdLong() {
+  return nanoid(30)
+}
 
 export async function createGroup(groupFormValues: GroupFormValues) {
   return prisma.group.create({
     data: {
-      id: randomId(),
+      id: randomIdLong(),
       name: groupFormValues.name,
       information: groupFormValues.information,
       currency: groupFormValues.currency,

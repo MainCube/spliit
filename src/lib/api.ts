@@ -4,9 +4,9 @@ import {
   RecurrenceRule,
   RecurringExpenseLink,
 } from '@/generated/prisma/client'
-import { nanoid } from 'nanoid'
 import { prisma } from '@/lib/prisma'
 import { ExpenseFormValues, GroupFormValues } from '@/lib/schemas'
+import { nanoid } from 'nanoid'
 
 export function randomId() {
   return nanoid()

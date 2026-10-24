@@ -6,16 +6,13 @@ import {
 } from '@/generated/prisma/client'
 import { prisma } from '@/lib/prisma'
 import { randomId } from '@/lib/random'
+import { randomIdLong } from '@/lib/random'
 import { nextRecurringDate } from '@/lib/recurrence'
 import { ExpenseFormValues, GroupFormValues } from '@/lib/schemas'
-import { nanoid } from 'nanoid'
 
 // Re-exported for backwards compatibility with existing server-side importers.
 export { randomId }
 
-export function randomIdLong() {
-  return nanoid(30)
-}
 
 export async function createGroup(groupFormValues: GroupFormValues) {
   return prisma.group.create({
